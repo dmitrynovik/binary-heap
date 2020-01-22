@@ -22,9 +22,9 @@ namespace DataStructures.BinaryHeap
 
         internal static int GetParentIndex(int i) => (i - 1) >> 1;
 
-        internal static int GetLeftIndex(int i) => ((i + 1) << 1) - 1;
+        internal static int GetLeftIndex(int i) => (i << 1) + 1;
 
-        internal static int GetRightIndex(int i) => ((i + 1) << 1);
+        internal static int GetRightIndex(int i) => (i << 1) + 2;
 
         private T GetAt(int index) => index < _list.Count ? _list[index] : default(T);
     }
