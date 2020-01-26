@@ -13,9 +13,9 @@ namespace DataStructures.BinaryHeap
             var self = 2;
             using (new AssertionScope())
             {
-                BinaryHeap<int>.GetParentIndex(self).Should().Be(0);
-                BinaryHeap<int>.GetLeftIndex(self).Should().Be(5);
-                BinaryHeap<int>.GetRightIndex(self).Should().Be(6);
+                Heap<int>.GetParentIndex(self).Should().Be(0);
+                Heap<int>.GetLeftIndex(self).Should().Be(5);
+                Heap<int>.GetRightIndex(self).Should().Be(6);
             }
         }
 
@@ -25,10 +25,17 @@ namespace DataStructures.BinaryHeap
             var self = 1;
             using (new AssertionScope())
             {
-                BinaryHeap<int>.GetParentIndex(self).Should().Be(0);
-                BinaryHeap<int>.GetLeftIndex(self).Should().Be(3);
-                BinaryHeap<int>.GetRightIndex(self).Should().Be(4);
+                Heap<int>.GetParentIndex(self).Should().Be(0);
+                Heap<int>.GetLeftIndex(self).Should().Be(3);
+                Heap<int>.GetRightIndex(self).Should().Be(4);
             }
+        }
+
+        [Test]
+        public void Heapify()
+        {
+            var heap = new Heap<int>(new[] { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 });
+            heap.Items.Should().BeEquivalentTo(new[] { 16, 14, 10, 8, 7, 9, 3, 2, 4, 1 });
         }
     }
 }

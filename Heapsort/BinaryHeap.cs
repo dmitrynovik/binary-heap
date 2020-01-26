@@ -1,17 +1,27 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using FluentAssertions.Equivalency;
 
 namespace DataStructures.BinaryHeap
 {
-    public class BinaryHeap<T> where T: IComparable
+    public class Heap<T> where T: IComparable
     {
         private IList<T> _list;
 
 
-        public BinaryHeap() {  _list = new List<T>(); }
+        public Heap() {  _list = new List<T>(); }
 
-        public BinaryHeap(int capacity) {  _list = new List<T>(capacity); }
+        public Heap(int capacity) {  _list = new List<T>(capacity); }
+
+        public Heap(IEnumerable<T> items) 
+        { 
+            _list = new List<T>(items);
+            BuildMaxHeap();
+        }
+
+
+        public IEnumerable<T> Items => _list;
 
         public int HeapSize => _list.Count;
 
@@ -29,6 +39,12 @@ namespace DataStructures.BinaryHeap
         internal static int GetRightIndex(int i) => (i << 1) + 2;
 
         private T GetAt(int index) => index < _list.Count ? _list[index] : default(T);
+
+        private void BuildMaxHeap()
+        {
+            for (var i = 0; i < HeapSize / 2; ++i)
+                Heapify(i);
+        }
 
         internal void Heapify(int i)
         {
