@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heapsort", "Heapsort\Heapsort.csproj", "{7235A346-F03F-465C-82D9-F83932636000}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeapsortTest", "HeapsortTest\HeapsortTest.csproj", "{B8BB669A-1DAA-4251-A123-543181A69654}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7235A346-F03F-465C-82D9-F83932636000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7235A346-F03F-465C-82D9-F83932636000}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7235A346-F03F-465C-82D9-F83932636000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8BB669A-1DAA-4251-A123-543181A69654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8BB669A-1DAA-4251-A123-543181A69654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8BB669A-1DAA-4251-A123-543181A69654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8BB669A-1DAA-4251-A123-543181A69654}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

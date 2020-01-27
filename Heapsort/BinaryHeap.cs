@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using FluentAssertions.Equivalency;
+
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("HeapsortTest")]
 
 namespace DataStructures.BinaryHeap
 {
