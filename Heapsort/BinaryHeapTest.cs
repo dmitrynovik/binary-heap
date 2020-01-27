@@ -37,5 +37,13 @@ namespace DataStructures.BinaryHeap
             var heap = new Heap<int>(new[] { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 });
             heap.Items.Should().BeEquivalentTo(new[] { 16, 14, 10, 8, 7, 9, 3, 2, 4, 1 });
         }
+
+        [Test]
+        public void Heapsort()
+        {
+            var heap = new Heap<int>(new[] { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 });
+            heap.Sort();
+            heap.Items.Should().BeEquivalentTo(new[] { 16, 14, 10, 9, 8, 7, 4, 3, 2, 1 });
+        }
     }
 }

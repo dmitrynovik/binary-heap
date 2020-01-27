@@ -39,7 +39,20 @@ namespace DataStructures.BinaryHeap
                 }
                 _heapSize = value;
             }
-        } 
+        }
+
+        public void Sort()
+        {
+            for (var i = HeapSize - 1; i > 0; i--, HeapSize = HeapSize - 1)
+            {
+                var tmp = _list[0];
+                _list[0] = _list[i];
+                _list[i] = tmp;
+
+
+                Heapify(0);                
+            }
+        }
 
         public T GetParent(int i) => i == 0 ? default(T) : _list[GetParentIndex(i)];
 
