@@ -9,6 +9,7 @@ namespace DataStructures.BinaryHeap
     {
         private IList<T> _list;
 
+        private int? _heapSize = null;
 
         public Heap() {  _list = new List<T>(); }
 
@@ -23,7 +24,22 @@ namespace DataStructures.BinaryHeap
 
         public IEnumerable<T> Items => _list;
 
-        public int HeapSize => _list.Count;
+        public int HeapSize 
+        {
+            get =>_heapSize ?? _list.Count;
+            set 
+            {
+                if (value > _heapSize)
+                {
+                    var tmp = new List<T>(value);
+                    for (var i = 0; i < _heapSize; ++i)
+                        tmp[i] = _list[i];
+
+                    _list = tmp;
+                }
+                _heapSize = value;
+            }
+        } 
 
         public T GetParent(int i) => i == 0 ? default(T) : _list[GetParentIndex(i)];
 
